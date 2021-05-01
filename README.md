@@ -24,7 +24,7 @@ On the other hand, the frontend application contains the UI code created using R
 
 The backend application structure is the same as any Django app. The following image shows this structure:
 
-![](RackMultipart20210501-4-1p10h84_html_f9173778fec71628.png)
+![1](https://user-images.githubusercontent.com/34078372/116770857-388c9980-aa0c-11eb-8bb8-d05dcbb757fd.png)
 
 _Figure 1_
 
@@ -43,7 +43,7 @@ Inside this file, we can find all model&#39;s definitions. First, two profile mo
 
 The urls file contains the url routes the frontend will use to interact with the backend.
 
-![](RackMultipart20210501-4-1p10h84_html_fe5469736d13c1a4.png)
+![2](https://user-images.githubusercontent.com/34078372/116770862-46421f00-aa0c-11eb-81b0-870d20c7be8e.png)
 
 _Figure 2_
 
@@ -67,7 +67,7 @@ The first three paths handle user authentication and creation. I decided to incl
 
 The actual implementation of each path&#39;s function is done in the view.py. This did heavily use Django Rest Framework generic views, thus most of them are class-based views. In order to keep this documentation concise, let&#39;s take a look at the view for the /shop URL:
 
-![](RackMultipart20210501-4-1p10h84_html_77403de0e3e464c5.png)
+![3](https://user-images.githubusercontent.com/34078372/116770867-5528d180-aa0c-11eb-86fa-23a511850796.png)
 
 _Figure 3_
 
@@ -77,23 +77,26 @@ The ShopListCreate class inherits from generics.ListCreateAPIView and defines tw
 
 The frontend application defines the user facing interface with react. This app&#39;s structure looks as follows:
 
-![](RackMultipart20210501-4-1p10h84_html_55a66c7a671c88a4.png)
+![4](https://user-images.githubusercontent.com/34078372/116770873-696cce80-aa0c-11eb-8f7e-02987559a0ff.png)
+
 
 _Figure 4_
 
 Since this application is only tasked with presenting the UI, it doesn&#39;t hold any business-related logic, thus most of the commonly used files in a Django app are almost empty. Essentially, the urls.py file specifies the single view route, while the views.py file returns the corresponding HTML template from the templates/folder.
 
-![](RackMultipart20210501-4-1p10h84_html_c2ac3d78d7998eee.png)
+![5](https://user-images.githubusercontent.com/34078372/116770874-6bcf2880-aa0c-11eb-8bac-dfb109650ac2.png)
+
 
 _Figure 5. urls.py file_
 
-![](RackMultipart20210501-4-1p10h84_html_1dde0561036a7dc2.png)
+![6](https://user-images.githubusercontent.com/34078372/116770877-6e318280-aa0c-11eb-8df9-af9186fd91b0.png)
 
 _Figure 6_
 
 As shown in figure 6, the index view renders the index.html file located in the frontend folder of the frontend application. As we are going to see, this HTML file loads the react code using Django static template tag.
 
-![](RackMultipart20210501-4-1p10h84_html_e57508cbcec24eee.png)
+![7](https://user-images.githubusercontent.com/34078372/116770888-8bfee780-aa0c-11eb-9e82-b5f5e2c1daa9.png)
+
 
 _Figure 7_
 
@@ -101,17 +104,19 @@ Figure 7 shows the index.html file markup. There we see, first, the JavaScript c
 
 **Index.js**
 
-![](RackMultipart20210501-4-1p10h84_html_b00784c85433d8bb.png)
+![8](https://user-images.githubusercontent.com/34078372/116770886-899c8d80-aa0c-11eb-82e9-eb54e1c66843.png)
+
 
 _Figure 8_
 
 This file, also known as the entry point for the webpack, defines where the React application will be loaded. In this case, that is inside the element with id &quot;root&quot; in the index.html file. We can see that the render method contains one parent component and one children component. The parent component, or BrowserRouter, is a routing component, and the App component is the Carfy UI React code we&#39;ll see shortly. Before moving on, we previously mentioned that the main.js file loaded into the index.html file was automatically generated. Well, we configured the webpack to take this index.js file as input, and output the main.js file. To do this, in the Django project root path we need to initialize a new npm package and create a webpack.config.js as shown below:
 
-![](RackMultipart20210501-4-1p10h84_html_8ef06c0e89ec83d4.png)
+![9](https://user-images.githubusercontent.com/34078372/116770892-8f926e80-aa0c-11eb-8418-eb8465c57153.png)
+
 
 _Figure 9_
 
-Inside the webpack.config.js file, there&#39;s configuration code for what type of files the webpack will process, and where to put its output. However, the most important configuration part is the entry point file configuration and the output file. These two are defined in the entry and output attributes of the module.exports object: ![](RackMultipart20210501-4-1p10h84_html_d9e7a86c3e3cf6f0.png)
+Inside the webpack.config.js file, there&#39;s configuration code for what type of files the webpack will process, and where to put its output. However, the most important configuration part is the entry point file configuration and the output file. These two are defined in the entry and output attributes of the module.exports object: ![]![10](https://user-images.githubusercontent.com/34078372/116770895-9325f580-aa0c-11eb-8684-5f8e7eb41ffc.png)
 
 _Figure 10_
 
@@ -125,7 +130,8 @@ All files seen and folders seen in figure 9, with the exception to the carfy fol
 
 As pointed out in the index.js section, in figure 8 the App react component is used. This component is where Carfy&#39;s UI interface is coded.
 
-![](RackMultipart20210501-4-1p10h84_html_859a5472ce46392b.png)
+![11](https://user-images.githubusercontent.com/34078372/116770896-97eaa980-aa0c-11eb-9bc1-2846b7ec3461.png)
+
 
 _Figure 11_
 
