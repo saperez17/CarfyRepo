@@ -1,0 +1,38 @@
+.centerContent {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding-top: 0px;
+}
+
+.btnSizing {
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  padding: 0 !important;
+}
+.btnSizing > span {
+  color: white;
+}
+.btnSizing > span > i:hover {
+  color: orange;
+}
+
+.emptyStyle {
+  background: none;
+  border: none;
+}
+.emptyStyle > i:hover {
+  color: #5a5a5a;
+}
+
+.cartStyle {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.cartStyle2 {
+  font-size: 1.5rem;
+  color: #000 !important;
+}

@@ -1,0 +1,10 @@
+.filter {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 1rem;
+  margin: 1rem;
+}
+.filter div {
+  margin-right: 1rem;
+}
